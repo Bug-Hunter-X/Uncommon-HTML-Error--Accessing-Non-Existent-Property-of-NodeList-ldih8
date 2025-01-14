@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv"></div>
+  <script>
+    // Convert the NodeList to an array before manipulating it
+    const divs = Array.from(document.querySelectorAll('div'));
+    //Now you can safely add properties
+    divs.forEach(div => div.myProperty = 'test');
+    console.log(divs[0].myProperty);
+  </script>
+</body>
+</html>
